@@ -3,10 +3,10 @@
 
 
 # Projeto XPTO
-##### (É difícil nomear "coisas")
+>(É difícil nomear "coisas")
 
 ##
-#### Descrição
+### Descrição
 
 Projeto para paraticar o desenvolvimento de APIs utilizando a plataforma .NET Core com a tecnologia ASP.NET Core framework.
 
