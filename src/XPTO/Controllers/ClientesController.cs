@@ -5,6 +5,7 @@
 
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using XPTO.Data;
 
 namespace XPTO.Controllers
 {
@@ -12,6 +13,13 @@ namespace XPTO.Controllers
     [Route("api/[controller]")]
     public class ClientesController : ControllerBase
     {
+        private readonly IClienteAPIRepository _repository;
+
+        public ClientesController(IClienteAPIRepository repository)
+        {
+            _repository = repository;
+        }
+        
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
