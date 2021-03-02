@@ -6,6 +6,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using XPTO.Data;
+using XPTO.Models;
 
 namespace XPTO.Controllers
 {
@@ -19,11 +20,25 @@ namespace XPTO.Controllers
         {
             _repository = repository;
         }
-        
+
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public ActionResult<IEnumerable<Cliente>> GetAllClientes()
         {
-            return new string[] {"Escrito ", "direto ", "no ", "código"};
+            var clientes = _repository.GetAllClientes();
+            
+            return Ok(clientes);
+        }
+        
+        [HttpGet("{id}")]
+        public ActionResult<IEnumerable<string>> GetClienteById(int id)
+        {
+            var cliente = _repository.GetClienteById(id);
+            if (cliente == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(cliente);
         }
     }
 }
