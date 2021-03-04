@@ -38,7 +38,7 @@ namespace XPTO
             // ============================================================================================================================
             // Registra o serviço (classe) necessário para a aplicação.
             // ============================================================================================================================
-            services.AddScoped<IClienteAPIRepository, MockClienteAPIRepository>();
+            services.AddScoped<IClienteAPIRepository, ClienteRepository>();
 
             // ============================================================================================================================
             // Registra o serviço (classe) DBContext para acessar o banco de dados.
