@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using XPTO.Data;
 using XPTO.DTOs;
+using XPTO.Models;
 
 namespace XPTO.Controllers
 {
@@ -32,7 +33,7 @@ namespace XPTO.Controllers
             return Ok(_mapper.Map<IEnumerable<ClienteReadDTO>>(clientes));
         }
         
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name = "GetClienteById")]
         public ActionResult<IEnumerable<ClienteReadDTO>> GetClienteById(int id)
         {
             var cliente = _repository.GetClienteById(id);
@@ -40,6 +41,18 @@ namespace XPTO.Controllers
             if (cliente == null) return NotFound();
 
             return Ok(_mapper.Map<ClienteReadDTO>(cliente));
+        }
+
+        [HttpPost]
+        public ActionResult<ClienteReadDTO> CreateCliente(ClienteCreateDTO clienteCreateDTO)
+        {
+            var clienteModel = _mapper.Map<Cliente>(clienteCreateDTO);
+            _repository.CreateCliente(clienteModel);
+            _repository.SaveChanges();
+
+            var clienteReadDto = _mapper.Map<ClienteReadDTO>(clienteModel);
+
+            return CreatedAtRoute(nameof(GetClienteById), new { Id = clienteReadDto.ClienteId }, clienteReadDto);
         }
     }
 }

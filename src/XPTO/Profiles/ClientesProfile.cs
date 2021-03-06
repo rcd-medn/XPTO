@@ -16,6 +16,7 @@ namespace XPTO.Profiles
             // Mapeia um objeto Cliente do modelo de dominio (Models) para um objeto DTO, que será entregue à API Cliente.
             // ============================================================================================================================
             CreateMap<Cliente, ClienteReadDTO>();
+            CreateMap<ClienteCreateDTO, Cliente>();
         }
     }
 }

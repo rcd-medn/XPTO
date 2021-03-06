@@ -4,6 +4,7 @@
 
 
 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using XPTO.Models;
@@ -21,7 +22,12 @@ namespace XPTO.Data
         
         public void CreateCliente(Cliente cliente)
         {
-            throw new System.NotImplementedException();
+            if (cliente == null)
+            {
+                throw new ArgumentNullException(nameof(cliente));
+            }
+
+            _context.Clientes.Add(cliente);
         }
 
         public void DeleteCliente(Cliente cliente)
@@ -42,7 +48,7 @@ namespace XPTO.Data
 
         public bool SaveChanges()
         {
-            throw new System.NotImplementedException();
+            return (_context.SaveChanges() >= 0);
         }
 
         public void UpdateCliente(Cliente cliente)
