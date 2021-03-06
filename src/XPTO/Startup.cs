@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -47,6 +48,11 @@ namespace XPTO
             {
                 options.UseSqlServer(Configuration.GetConnectionString("XPTO"));
             });
+
+            // ============================================================================================================================
+            // Registra o serviço AutoMapper e carrega os assemblies para que seja feita a leitura das classes (DTOs) necessárias.
+            // ============================================================================================================================
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
