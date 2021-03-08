@@ -28,7 +28,7 @@ Para este projeto está sendo utilizada a plataforma .NET Core com as seguintes 
 <br>
 <h5>Frameworks</h5>
 
-- [ASP.NET Core Framework 3.1](https://docs.microsoft.com/pt-br/aspnet/core/?view=aspnetcore-3.1)
+- [ASP.NET Core Framework](https://docs.microsoft.com/pt-br/aspnet/core/?view=aspnetcore-3.1)
 - [Entity Framework Core](https://docs.microsoft.com/pt-br/ef/core/)
 
 <h5>Banco de dados</h5>
@@ -39,5 +39,28 @@ Para este projeto está sendo utilizada a plataforma .NET Core com as seguintes 
 
 - [Visual Studio Code](https://code.visualstudio.com/)
 
+<h5>Cliente API</h5>
+
+- [Postman](https://www.postman.com/)
+
 <h5></h5>
 </p>
+
+<br>
+<h3>Objetivos do Projeto</h3>
+
+<p align="justify">
+Como mencionado na descrição, o projeto começara simples, executando operações básicas de gerenciamento de dados de clientes fictícios, tais operações formariam um CRUD simples, porque, por enquanto, a API estaria trabalhando somente com uma (1) tabela, a de Clientes.
+</p>
+
+<p>
+Já que os objetivos são simples, neste momento, abaixo está uma lista com a funcionalidades necessárias.
+</p>
+
+##### Features
+
+###### Com Clientes (Algumas operações já estão finalizadas)
+- [X] Inserir um novo cliente (Create) <br>
+- [X] Recuperar dados do cliente (Read) - Podendo ser um único cliente ou uma lista <br>
+- [ ] Atualizar dados do cliente (Update) <br>
+- [ ] Excluir dados do cliente (Delete) <br>
