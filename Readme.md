@@ -57,9 +57,9 @@ Como mencionado na descrição, o projeto começara simples, executando operaç�
 Já que os objetivos são simples, neste momento, abaixo está uma lista com a funcionalidades necessárias.
 </p>
 
-##### Features
+#### Features
 
-###### Com Clientes (Algumas operações já estão finalizadas)
+##### Com Clientes - Algumas operações já estão finalizadas
 - [X] Inserir um novo cliente (Create) <br>
 - [X] Recuperar dados do cliente (Read) - Podendo ser um único cliente ou uma lista <br>
 - [ ] Atualizar dados do cliente (Update) <br>
