@@ -14,6 +14,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Newtonsoft.Json.Serialization;
 using XPTO.Data;
 
 namespace XPTO
@@ -34,7 +35,10 @@ namespace XPTO
             // ============================================================================================================================
             // Adiciona suporte ao uso de somente "Controllers" e não a Views e Pages.
             // ============================================================================================================================
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(s =>
+            {
+                s.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            });
 
             // ============================================================================================================================
             // Registra o serviço (classe) necessário para a aplicação.

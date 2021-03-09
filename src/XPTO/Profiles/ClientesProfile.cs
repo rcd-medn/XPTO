@@ -20,6 +20,7 @@ namespace XPTO.Profiles
             CreateMap<Cliente, ClienteReadDTO>();
             CreateMap<ClienteCreateDTO, Cliente>();
             CreateMap<ClienteUpdateDTO, Cliente>();
+            CreateMap<Cliente, ClienteUpdateDTO>();
         }
     }
 }

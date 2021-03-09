@@ -4,6 +4,7 @@
 
 
 using AutoMapper;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using XPTO.Data;
@@ -67,6 +68,31 @@ namespace XPTO.Controllers
             _mapper.Map(clienteUpdateDTO, clienteModelFromRepo);
 
             _repository.UpdateCliente(clienteModelFromRepo);
+            _repository.SaveChanges();
+
+            return NoContent();
+        }
+
+        [HttpPatch("{id}")]
+        public ActionResult PartialClienteUpdate(int id, JsonPatchDocument<ClienteUpdateDTO> patchDoc)
+        {
+            var clienteModel = _repository.GetClienteById(id);
+            if (clienteModel == null)
+            {
+                return NotFound();
+            }
+
+            var clienteToPatch = _mapper.Map<ClienteUpdateDTO>(clienteModel);
+            patchDoc.ApplyTo(clienteToPatch, ModelState);
+
+            if (!TryValidateModel(clienteToPatch))
+            {
+                return ValidationProblem(ModelState);
+            }
+
+            _mapper.Map(clienteToPatch, clienteModel);
+
+            _repository.UpdateCliente(clienteModel);
             _repository.SaveChanges();
 
             return NoContent();
