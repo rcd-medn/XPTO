@@ -54,5 +54,22 @@ namespace XPTO.Controllers
 
             return CreatedAtRoute(nameof(GetClienteById), new { Id = clienteReadDto.ClienteId }, clienteReadDto);
         }
+
+        [HttpPut("{id}")]
+        public ActionResult UpdateCliente(int id, ClienteUpdateDTO clienteUpdateDTO)
+        {
+            var clienteModelFromRepo = _repository.GetClienteById(id);
+            if (clienteModelFromRepo == null)
+            {
+                return NotFound();
+            }
+
+            _mapper.Map(clienteUpdateDTO, clienteModelFromRepo);
+
+            _repository.UpdateCliente(clienteModelFromRepo);
+            _repository.SaveChanges();
+
+            return NoContent();
+        }
     }
 }

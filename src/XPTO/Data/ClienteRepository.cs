@@ -53,7 +53,7 @@ namespace XPTO.Data
 
         public void UpdateCliente(Cliente cliente)
         {
-            throw new System.NotImplementedException();
+            //throw new System.NotImplementedException();
         }
     }
 }
