@@ -32,7 +32,12 @@ namespace XPTO.Data
 
         public void DeleteCliente(Cliente cliente)
         {
-            throw new System.NotImplementedException();
+            if (cliente == null)
+            {
+                throw new ArgumentNullException(nameof(cliente));
+            }
+
+            _context.Clientes.Remove(cliente);
         }
 
         public IEnumerable<Cliente> GetAllClientes()

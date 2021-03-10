@@ -97,5 +97,20 @@ namespace XPTO.Controllers
 
             return NoContent();
         }
+
+        [HttpDelete("{id}")]
+        public ActionResult DeleteCliente(int id)
+        {
+            var clienteFromRepo = _repository.GetClienteById(id);
+            if (clienteFromRepo == null)
+            {
+                return NotFound();
+            }
+
+            _repository.DeleteCliente(clienteFromRepo);
+            _repository.SaveChanges();
+
+            return NoContent();
+        }
     }
 }
