@@ -11,11 +11,11 @@ namespace XPTO.Models
     /// <summary>
     /// Classe para modelar a tabela "Clientes" no banco de dados XPTO
     /// </summary>
-    public class Cliente
+    public class Usuario
     {
         [Key]
         [Required]
-        public int ClienteId { get; set; }
+        public int UsuarioId { get; set; }
 
         [Required]
         [MaxLength(100)]
