@@ -19,7 +19,16 @@ Como o projeto está em estágio "embrionário", executará as operações bási
 A medida em que novas ideias/funcionalidades forem adicionadas, elas serão descritas aqui.
 </p>
 
+<h5>Update</h5>
+<p align="center">
+Após uma semana sem alterar o projeto, resolvi que vou implementar algumas funcionalidades e alterações na estrutura o projeto no projeto. <br>
+
+Tais funcionalidades se referem a um controle de ativos de investimentos. Algo simples,mas que não vejo nas ferramentas da corretora onde sou cliente.
+</p>
+
 <br>
+
+<hr>
 <h3>Tecnologias Utilizadas</h3>
 
 <p align="justify">
@@ -47,6 +56,8 @@ Para este projeto está sendo utilizada a plataforma .NET Core com as seguintes 
 </p>
 
 <br>
+
+<hr>
 <h3>Objetivos do Projeto</h3>
 
 <p align="justify">
@@ -56,12 +67,20 @@ Como mencionado na descrição, o projeto começara simples, executando operaç�
 <p>
 Já que os objetivos são simples, neste momento, abaixo está uma lista com a funcionalidades necessárias.
 </p>
+<br>
 
-#### Features
+<h4>Features</h4>
 
-##### Com Clientes - Algumas operações já estão finalizadas
+<h5>Com Clientes - Algumas operações já estão finalizadas</h5>
 
 - [X] Inserir um novo cliente (Create) <br>
 - [X] Recuperar dados do cliente (Read) - Podendo ser um único cliente ou uma lista <br>
-- [ ] Atualizar dados do cliente (Update) <br>
-- [ ] Excluir dados do cliente (Delete) <br>
+- [X] Atualizar dados do cliente (Update) <br>
+- [X] Excluir dados do cliente (Delete) <br>
+
+<br>
+<p align="justify">
+As funcionalidades acima foram implementadas, mas agora ocorreram modificações.<br>
+A começar, não existe mais o conceito de cliente, agora será usuário.<br>
+A estrutura de diretórios também será revista e com toda certteza, alterada.
+</p>
