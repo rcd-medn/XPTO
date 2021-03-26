@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using XPTO.Models;
 
-namespace XPTO.Data.Usuario
+namespace XPTO.Domain.Repositories
 {
     public class UsuarioRepository : IUsuarioAPIRepository
     {

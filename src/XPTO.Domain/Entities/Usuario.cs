@@ -6,7 +6,7 @@
 
 using System.ComponentModel.DataAnnotations;
 
-namespace XPTO.Models
+namespace XPTO.Domain.Entities
 {
     /// <summary>
     /// Classe para modelar a tabela "Usuarios" no banco de dados XPTO

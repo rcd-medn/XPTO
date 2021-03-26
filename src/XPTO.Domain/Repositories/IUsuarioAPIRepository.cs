@@ -7,7 +7,7 @@
 using System.Collections.Generic;
 using XPTO.Models;
 
-namespace XPTO.Data.Usuario
+namespace XPTO.Domain.Repositories
 {
     public interface IUsuarioAPIRepository
     {

@@ -15,7 +15,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Newtonsoft.Json.Serialization;
-using XPTO.Data;
 
 namespace XPTO
 {
@@ -43,15 +42,15 @@ namespace XPTO
             // ============================================================================================================================
             // Registra o serviço (classe) necessário para a aplicação.
             // ============================================================================================================================
-            services.AddScoped<IClienteAPIRepository, ClienteRepository>();
+            // services.AddScoped<IClienteAPIRepository, ClienteRepository>();
 
             // ============================================================================================================================
             // Registra o serviço (classe) DBContext para acessar o banco de dados.
             // ============================================================================================================================
-            services.AddDbContext<XPTOContext>(options =>
-            {
-                options.UseSqlServer(Configuration.GetConnectionString("XPTO"));
-            });
+            // services.AddDbContext<XPTOContext>(options =>
+            // {
+            //     options.UseSqlServer(Configuration.GetConnectionString("XPTO"));
+            // });
 
             // ============================================================================================================================
             // Registra o serviço AutoMapper e carrega os assemblies para que seja feita a leitura das classes (DTOs) necessárias.
