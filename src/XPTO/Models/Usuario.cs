@@ -9,7 +9,7 @@ using System.ComponentModel.DataAnnotations;
 namespace XPTO.Models
 {
     /// <summary>
-    /// Classe para modelar a tabela "Clientes" no banco de dados XPTO
+    /// Classe para modelar a tabela "Usuarios" no banco de dados XPTO
     /// </summary>
     public class Usuario
     {
@@ -33,5 +33,8 @@ namespace XPTO.Models
         [MaxLength(80)]
         [EmailAddress]
         public string Email { get; set; }
+
+        [Date]
+        public DateTime DataNascimento { get; set; }
     }
 }
