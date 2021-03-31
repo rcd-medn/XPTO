@@ -7,11 +7,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using XPTO.Models;
+using XPTO.Domain.Entities;
 
 namespace XPTO.Domain.Repositories
 {
-    public class UsuarioRepository : IUsuarioAPIRepository
+    public class UsuarioRepository
     {
         private readonly XPTOContext _context;
 
@@ -19,8 +19,8 @@ namespace XPTO.Domain.Repositories
         {
             _context = context;
         }
-        
-        public void CreateUsuario(Cliente usuario)
+
+        public void CreateUsuario(Usuario usuario)
         {
             if (usuario == null)
             {
@@ -30,7 +30,7 @@ namespace XPTO.Domain.Repositories
             _context.Clientes.Add(usuario);
         }
 
-        public void DeleteUsuario(Cliente usuario)
+        public void DeleteUsuario(Usuario usuario)
         {
             if (usuario == null)
             {
@@ -46,7 +46,7 @@ namespace XPTO.Domain.Repositories
             return usuarios;
         }
 
-        public Cliente GetUsuarioById(int id)
+        public Usuario GetUsuarioById(int id)
         {
             return _context.Clientes.FirstOrDefault(p => p.ClienteId == id);
         }
@@ -56,7 +56,7 @@ namespace XPTO.Domain.Repositories
             return (_context.SaveChanges() >= 0);
         }
 
-        public void UpdateCliente(Cliente usuario)
+        public void UpdateUsuario(Usuario usuario)
         {
             //throw new System.NotImplementedException();
         }

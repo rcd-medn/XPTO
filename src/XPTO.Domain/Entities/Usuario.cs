@@ -4,6 +4,7 @@
 
 
 
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace XPTO.Domain.Entities
@@ -34,7 +35,7 @@ namespace XPTO.Domain.Entities
         [EmailAddress]
         public string Email { get; set; }
 
-        [Date]
+        [DataType(DataType.Date)]
         public DateTime DataNascimento { get; set; }
     }
 }
