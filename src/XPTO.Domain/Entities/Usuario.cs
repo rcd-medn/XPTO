@@ -5,6 +5,7 @@
 
 
 using System;
+using System.Collections.Generic;
 
 namespace XPTO.Domain.Entities
 {
@@ -19,5 +20,7 @@ namespace XPTO.Domain.Entities
         public string CPF { get; set; }
         public string Email { get; set; }
         public DateTime DataNascimento { get; set; }
+
+        public ICollection<CategoriaAtivo> CategoriaAtivos { get; set; }
     }
 }
