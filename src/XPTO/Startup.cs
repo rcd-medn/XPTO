@@ -15,6 +15,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Newtonsoft.Json.Serialization;
+using XPTO.Infrastructure;
 
 namespace XPTO
 {
@@ -34,10 +35,11 @@ namespace XPTO
             // ============================================================================================================================
             // Adiciona suporte ao uso de somente "Controllers" e não a Views e Pages.
             // ============================================================================================================================
-            services.AddControllers().AddNewtonsoftJson(s =>
-            {
-                s.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
-            });
+            services.AddControllers();
+            // .AddNewtonsoftJson(s =>
+            // {
+            //     s.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            // });
 
             // ============================================================================================================================
             // Registra o serviço (classe) necessário para a aplicação.
@@ -47,10 +49,12 @@ namespace XPTO
             // ============================================================================================================================
             // Registra o serviço (classe) DBContext para acessar o banco de dados.
             // ============================================================================================================================
-            // services.AddDbContext<XPTOContext>(options =>
-            // {
-            //     options.UseSqlServer(Configuration.GetConnectionString("XPTO"));
-            // });
+            services.AddDbContext<XPTOContext>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("XPTO"), serverOptions => {
+                    serverOptions.MigrationsAssembly(typeof(Startup).Assembly.FullName);
+                });
+            });
 
             // ============================================================================================================================
             // Registra o serviço AutoMapper e carrega os assemblies para que seja feita a leitura das classes (DTOs) necessárias.

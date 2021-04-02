@@ -5,6 +5,7 @@
 
 
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace XPTO.Domain.Entities
 {

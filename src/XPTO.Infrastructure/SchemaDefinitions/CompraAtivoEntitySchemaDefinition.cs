@@ -22,7 +22,8 @@ namespace XPTO.Infrastructure.SchemaDefinitions
             builder.Property(ca => ca.Quantidade)
                 .IsRequired();
             builder.Property(ca => ca.ValorUnitario)
-                .IsRequired();
+                .IsRequired()
+                .HasColumnType("decimal(18, 2)");
 
             builder.HasOne(ca => ca.Ativo)
                 .WithMany(a => a.CompraAtivos)
