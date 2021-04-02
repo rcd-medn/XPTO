@@ -31,6 +31,10 @@ namespace XPTO.Infrastructure
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new UsuarioEntitySchemaDefinition());
+            modelBuilder.ApplyConfiguration(new AtivoEntitySchemaDefinition());
+            modelBuilder.ApplyConfiguration(new CategoriaAtivoEntitySchemaDefinition());
+            modelBuilder.ApplyConfiguration(new CompraAtivoEntitySchemaDefinition());
+            modelBuilder.ApplyConfiguration(new VendaAtivoEntitySchemaDefinition());
         }
     }
 }

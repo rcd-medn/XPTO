@@ -22,6 +22,10 @@ namespace XPTO.Infrastructure.SchemaDefinitions
             
             builder.Property(c => c.DataCriacao)
                 .IsRequired();
+            
+            builder.HasOne(ca => ca.Usuario)
+                .WithMany(u => u.CategoriaAtivos)
+                .HasForeignKey(ca => ca.UsuarioId);
         }
     }
 }
